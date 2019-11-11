@@ -1,0 +1,24 @@
+% This part of the code, we will define variables.
+%Below C, Sx, and Sy are already defined from
+%the example. We'll replace those later.
+C = [ 1 1 0 0 0 0 0;...
+    1 0 1 0 1 1 0; ... 
+    0 1 1 1 0 0 0; ...
+    0 0 0 1 1 0 1; 0 0 0 0 0 1 1]; %This is a sample connection matrix.
+Sx = [1 0 0 0 0 ; 0 0 0 0 0 ; 0 0 0 0 0]; %This is the support force connection matrix.
+Sy =[0 0 0 0 0 ; 1 0 0 0 0 ; 0 0 0 0 1];
+X = []; %The is the location vector for X.
+for i = 1:rows(C)
+    X(i) = C(i);
+end
+Y = []; %This is the location vector for Y.
+for i = 1:cols(C)
+    Y(i) = C(i);
+end
+L = [0;0;0;0;0;0;0;0;mg;0]; %This is the load vector, 
+%which represents the known forces.
+
+
+% A construction of the system of equilibrium equations and solution for the unknown forces.
+
+%save(‘TrussDesign1_MaryJoeBob_A1.mat’,‘C’,‘Sx’,‘Sy’,‘X’,‘Y’,‘L’);
